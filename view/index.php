@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foro web</title>
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../img/logo_mission_vision.png">
+    <title>GREENNET</title>
+    <link rel="stylesheet" href="/view/css/fonts.css">
+    <link rel="stylesheet" href="/view/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/view/img/logo_mission_vision.png">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="../img/logo_mission_vision.png" alt="Logo de mi foro" class="img-logo">
+            <img src="/view/img/logo_mission_vision.png" alt="Logo de mi foro" class="img-logo">
             <h1 class="nombre-logo">GreenNet</h1>
         </div>
         <div class="eslogan">
@@ -19,7 +19,7 @@
         </div>
         <div class="perfil">
             <p class="nombre-perfil">Mi nombre</p>
-            <img src="../img/perfil.jpg" alt="Foto de perfil" class="img-perfil">
+            <img src="/view/img/perfil.jpg" alt="Foto de perfil" class="img-perfil">
         </div>
     </header>
     <div class="app">
@@ -41,10 +41,11 @@
                     <li>MrBeast construye 100 pozos en África</li>
                 </ul>
             </div>
+            <footer><p>Copyright 2024© GreenNet</p></footer>
         </aside>
         <main class="publicaciones">
             <section class="mi-perfil">
-                <img src="../img/perfil_img.jpg" alt="Mi imagen">
+                <img src="/view/img/perfil_img.jpg" alt="Mi imagen">
                 <div>
                     <h3>MiPerfil</h3>
                     <p>Crear Publicación</p>
@@ -59,6 +60,5 @@
         </section>
         
     </div>
-    <footer><p>Copyright 2024© GreenNet</p></footer>
 </body>
 </html>
