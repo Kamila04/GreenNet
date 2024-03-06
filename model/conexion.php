@@ -5,7 +5,7 @@ class conexion extends PDO{
     private $servername= "localhost";
     private $username= "root";
     private $password= "";
-    private $dbname= "prueba";
+    private $dbname= "greennet";
 
     public function __construct()
     {
