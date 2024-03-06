@@ -14,11 +14,8 @@
             <img src="/view/img/logo_mission_vision.png" alt="Logo de mi foro" class="img-logo">
             <h1 class="nombre-logo">GreenNet</h1>
         </div>
-        <div class="eslogan">
-            <h3><i>Voces silenciosas que gritan alto</i></h3>
-        </div>
         <div class="perfil">
-            <p class="nombre-perfil">Mi nombre</p>
+            <p class="nombre-perfil"><a href="./index.php?m=login">Login/Sing up</a></p>
             <img src="/view/img/perfil.jpg" alt="Foto de perfil" class="img-perfil">
         </div>
     </header>
