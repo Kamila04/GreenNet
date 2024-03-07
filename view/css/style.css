@@ -9,12 +9,13 @@
     --fourth-color: #f43832;
 
     --background-light-color: #d7e0df;
+    --background-mid-light-color: #c4cbca; 
     --background-dark-color: #222;
 
     --text-dark-color: #132E4E;
     --text-light-color: #B9D2EE;
 
-    --panel-light-color: #a6afae;
+    --panel-light-color: #b6bdbc;
     --panel-dark-color: #333;
 }
 
@@ -77,7 +78,7 @@ header {
 
 .navegacion {
     flex: 4 1 0;
-    border-right: 1px solid var(--secondary-color);
+    border-right: 1px solid var(--background-light-color);
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
@@ -129,20 +130,27 @@ header {
 }
 
 .busqueda h2 {
-    font-size: 1.7em;
+    font-size: 1.2em;
     margin-bottom: 0.4em;
+    margin-left: 10px;
 }
 
 .busqueda input[type="search"] {
-    background-color: var(--panel-light-color);
-    border-color: #fff;
-    border-radius: 10px;
-    font-size: 1.3em;
-    width: 100%;
-    max-width: 100%;
-    color: #fff;
+    background-color: var(--background-light-color);
+    border-color: transparent;
+    color: black;
+    font-weight: bold;
+    margin-left: 5px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    width: 95%;
+    max-width: 95;
     margin-bottom: 0.8em;
     padding: 0 0.8rem;
+}
+.busqueda input[type="search"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px #34343433;
 }
 
 .busqueda ul {
@@ -154,6 +162,8 @@ header {
     width: 100%;
     padding: 20px 20px;
     margin: 10px 0;
+    color: white;
+    font-weight: bold;
     background-color: var(--secondary-color);
     border-radius: 20px;
     cursor: pointer;
@@ -161,38 +171,54 @@ header {
 
 .publicaciones {
     flex: 7 1 0;
-    border-right: 1px solid var(--secondary-color);
-    border-left: 1px solid var(--secondary-color);
+    border-right: 1px solid var(--background-mid-light-color);
+    border-left: 1px solid var(--background-mid-light-color);
     overflow-y: auto;
 }
 
-.mi-perfil{
+.mi-perfil {
     max-width: 100%;
-    margin:  2% 5%;
-    padding: 2%;
+    max-height: 60%;
+    margin: 2% 3%;
     background-color: var(--panel-light-color);
     display: flex;
-    flex-flow: row nowrap;
-    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+
+}
+.image-container {
+    flex: 1;
+    text-align: center;
+    max-height: 80%;
+    max-width: 50%;
 }
 
-.mi-perfil img{
-    max-width: 14%;
+.mi-perfil img {
     border-radius: 50%;
     border: 3px solid black;
-    flex: 1 1 0;
     object-fit: contain;
+    max-width: 50%;
+    height: 20%;
+    max-height: 20%;
 }
-
-.mi-perfil div{
-    flex: 4 1 0;
+.mi-perfil button {
+    margin-top: 10px;
+    background-color: #0074D9;
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.mi-perfil .input-container {
+    flex: 2;
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    padding-left: 3%;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.mi-perfil h3{
+
+.mi-perfil h3 {
     font-size: 1.6em;
     margin-bottom: 5px;
 }
@@ -204,7 +230,7 @@ header {
 
 .comentarios {
     flex: 5 1 0;
-    border-left: 1px solid var(--secondary-color);
+    border-left: 1px solid var(--background-mid-light-color);
     overflow-y: auto;
 }
 

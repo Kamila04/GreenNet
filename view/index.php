@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GREENNET</title>
-    <link rel="stylesheet" href="/view/css/fonts.css">
-    <link rel="stylesheet" href="/view/css/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="/view/img/logo_mission_vision.png">
+    <link rel="stylesheet" href="view/css/fonts.css">
+    <link rel="stylesheet" href="view/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="view/img/logo_mission_vision.png">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="/view/img/logo_mission_vision.png" alt="Logo de mi foro" class="img-logo">
+            <img src="view/img/logo_mission_vision.png" alt="Logo de mi foro" class="img-logo">
             <h1 class="nombre-logo">GreenNet</h1>
         </div>
-        <div class="eslogan">
-            <h3><i>Voces silenciosas que gritan alto</i></h3>
-        </div>
+        
         <div class="perfil">
             <p class="nombre-perfil">Mi nombre</p>
-            <img src="/view/img/perfil.jpg" alt="Foto de perfil" class="img-perfil">
+            <img src="view/img/perfil.jpg" alt="Foto de perfil" class="img-perfil">
         </div>
     </header>
     <div class="app">
@@ -44,13 +42,16 @@
             <footer><p>Copyright 2024© GreenNet</p></footer>
         </aside>
         <main class="publicaciones">
-            <section class="mi-perfil">
-                <img src="/view/img/perfil_img.jpg" alt="Mi imagen">
-                <div>
-                    <h3>MiPerfil</h3>
-                    <p>Crear Publicación</p>
-                </div>
-            </section>
+        <div class="mi-perfil">
+            <div class="image-container">
+                <img src="view/img/perfil_img.jpg" alt="Imagen">
+                <button>¡Haz clic aquí!</button>
+            </div>
+            <div class="input-container">
+                <input type="text" placeholder="Primer input">
+                <input type="text" placeholder="Segundo input">
+            </div>
+        </div>
             <section class="feed">
 
             </section>
