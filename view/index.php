@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['name'])){
+    $datos_usuario = $_SESSION['name'];
+} else {
+    $datos_usuario = '<a href="./index.php?m=login">Login/Sing up</a>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,7 +24,7 @@
             <h1 class="nombre-logo">GreenNet</h1>
         </div>
         <div class="perfil">
-            <p class="nombre-perfil"><a href="./index.php?m=login">Login/Sing up</a></p>
+            <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
             <img src="/view/img/perfil.jpg" alt="Foto de perfil" class="img-perfil">
         </div>
     </header>
