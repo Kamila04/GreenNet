@@ -8,7 +8,7 @@
     --third-color: #fc6c24;
     --fourth-color: #f43832;
 
-    --background-light-color: #d7e0df;
+    --background-light-color: #eee;
     --background-dark-color: #222;
 
     --text-dark-color: #132E4E;
@@ -41,6 +41,7 @@ header {
     padding: 0 5%;
     font-size: 1.3rem;
     color: white;
+    box-shadow: 0 0 15px 2px #000000;
 }
 
 .logo, .perfil {
@@ -168,7 +169,7 @@ header {
 
 .mi-perfil{
     max-width: 100%;
-    margin:  2% 5%;
+    margin:  5% 5%;
     padding: 2%;
     background-color: var(--panel-light-color);
     display: flex;

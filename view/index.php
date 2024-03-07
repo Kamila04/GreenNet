@@ -1,3 +1,12 @@
+<?php
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+if(isset($_SESSION['name'])){
+    $datos_usuario = $_SESSION['name'];
+} else {
+    $datos_usuario = '<a href="./?m=login">Login/Sing up</a>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,11 +23,8 @@
             <img src="/view/img/logo_mission_vision.png" alt="Logo de mi foro" class="img-logo">
             <h1 class="nombre-logo">GreenNet</h1>
         </div>
-        <div class="eslogan">
-            <h3><i>Voces silenciosas que gritan alto</i></h3>
-        </div>
         <div class="perfil">
-            <p class="nombre-perfil">Mi nombre</p>
+            <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
             <img src="/view/img/perfil.jpg" alt="Foto de perfil" class="img-perfil">
         </div>
     </header>

@@ -1,3 +1,10 @@
+<?php
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+if(isset($_SESSION['name'])){
+    header("location:/");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,24 +18,26 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form action="index.php" method="post">
                 <h2><b>GreenNet</b></h2>
                 <br><b><i>Voces silenciosas que gritan alto</i></b><br>
                 <h1>Crear una cuenta</h1>
-                <input type="text" placeholder="Nombre">
-                <input type="email" placeholder="Correo">
-                <input type="password" placeholder="Contraseña">
-                <button>Registrarse</button>
+                <input type="text" placeholder="Nombre" name="name" required>
+                <input type="email" placeholder="Correo" name="email" required>
+                <input type="password" placeholder="Contraseña" name="pass" required minlength="6">
+                <input type="hidden" name="m" value="createAccount">
+                <button type="submit">Registrarse</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form action="index.php" method="post">
                 <h2><b>GreenNet</b></h2>
                 <br><b><i>Voces silenciosas que gritan alto</i></b><br>
                 <h1>Iniciar sesión</h1>
-                <input type="email" placeholder="Correo">
-                <input type="password" placeholder="Contraseña">
-                <button><a href="/view/">Iniciar sesión</a></button>
+                <input type="email" placeholder="Correo" name="email" required>
+                <input type="password" placeholder="Contraseña" name="pass" required minlength="6">
+                <input type="hidden" name="m" value="initAccount">
+                <button type="submit">Iniciar sesión</button>
             </form>
         </div>
         <div class="toggle-container">
