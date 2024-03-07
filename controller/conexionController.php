@@ -30,10 +30,10 @@ class conexionController{
     }
 
     static function createAccount() {
-        $name = $_GET['name'] | "";
-        $email = $_GET['email'] | "";
-        $pass = $_GET['pass'] | "";
-        if($name && $email && $pass){
+        if(isset($_GET['name']) && isset($_POST['email']) && isset($_POST['pass'])){
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $pass = $_POST['pass'];
             $conn = new conexion();
             $verificar_email = $conn->select("user", condiciones: ["Email"=>$email]);
             if(!(count($verificar_email) > 0)){
@@ -41,36 +41,36 @@ class conexionController{
                 $conn->insert("user", ["Username"=>$name, "Email"=>$email, "Password"=>$hashed_password, "ID_Role"=>2]);
                 conexionController::initAccount();
             } else {
-                conexionController::login();
+                header("Location: /?m=login");
             }
         } else {
-            conexionController::login();
+            header("Location: /?m=login");
         }
     }
 
     static function initAccount() {
-        $email = $_GET['email'] | "";
-        $pass = $_GET['pass'] | "";
-        if($email && $pass){
+        if(isset($_POST['email']) && isset($_POST['pass'])){
+            $email = $_POST['email'];
+            $pass = $_POST['pass'];
             $conn = new conexion();
             $verificar = $conn->select("user", condiciones: ["Email"=>$email]);
             if((count($verificar) == 1)){
                 if(password_verify($pass, $verificar[0]['Password'])){
-                    session_start();
+                    if(session_status() !== PHP_SESSION_ACTIVE) session_start();
                     $_SESSION["name"] = $verificar[0]['Username'];
-                    conexionController::index();
+                    header("Location: /");
                     return;
                 }
             }
         }
-        conexionController::login();
+        header("Location: /?m=login");
     }
 
     static function logout() {
         session_start();
         session_unset();
         session_destroy();
-        conexionController::index();
+        header("Location: /");
     }
 }
 ?>

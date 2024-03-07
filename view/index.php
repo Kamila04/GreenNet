@@ -1,9 +1,9 @@
 <?php
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 if(isset($_SESSION['name'])){
     $datos_usuario = $_SESSION['name'];
 } else {
-    $datos_usuario = '<a href="./index.php?m=login">Login/Sing up</a>';
+    $datos_usuario = '<a href="./?m=login">Login/Sing up</a>';
 }
 ?>
 

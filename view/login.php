@@ -1,5 +1,5 @@
 <?php
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 if(isset($_SESSION['name'])){
     header("location:/");
 }
@@ -18,7 +18,7 @@ if(isset($_SESSION['name'])){
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="index.php" method="get">
+            <form action="index.php" method="post">
                 <h2><b>GreenNet</b></h2>
                 <br><b><i>Voces silenciosas que gritan alto</i></b><br>
                 <h1>Crear una cuenta</h1>
@@ -30,7 +30,7 @@ if(isset($_SESSION['name'])){
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="index.php" method="get">
+            <form action="index.php" method="post">
                 <h2><b>GreenNet</b></h2>
                 <br><b><i>Voces silenciosas que gritan alto</i></b><br>
                 <h1>Iniciar sesión</h1>
