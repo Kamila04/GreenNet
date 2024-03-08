@@ -30,7 +30,7 @@ class conexionController{
     }
 
     static function createAccount() {
-        if(isset($_GET['name']) && isset($_POST['email']) && isset($_POST['pass'])){
+        if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])){
             $name = $_POST['name'];
             $email = $_POST['email'];
             $pass = $_POST['pass'];
