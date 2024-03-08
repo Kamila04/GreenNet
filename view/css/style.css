@@ -42,6 +42,7 @@ header {
     padding: 0 5%;
     font-size: 1.3rem;
     color: white;
+    box-shadow: 0 0 15px 2px #000000;
 }
 
 .logo, .perfil {

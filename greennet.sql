@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-03-2024 a las 04:38:19
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 07-03-2024 a las 03:40:20
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `greenet`
+-- Base de datos: `greennet`
 --
 
 -- --------------------------------------------------------
@@ -102,6 +102,14 @@ CREATE TABLE `role` (
   `Description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `role`
+--
+
+INSERT INTO `role` (`ID_Role`, `Position`, `Description`) VALUES
+(1, 'administrador', 'Administrador del foro'),
+(2, 'usuario', 'Usuario que interactúan y publica en el foro');
+
 -- --------------------------------------------------------
 
 --
@@ -123,10 +131,18 @@ CREATE TABLE `topics` (
 CREATE TABLE `user` (
   `ID_user` int(11) NOT NULL,
   `Username` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(60) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `ID_Role` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`ID_user`, `Username`, `Password`, `Email`, `ID_Role`) VALUES
+(2, 'Saúl Bustamante Bernabe', '$2y$10$/JTlLYqOZ/0/5hhkBLcefuRrZScAIYftHDV7jyhZoQL1sgU9EzrLK', 'zaul.bush@hotmail.com', 2),
+(3, 'Karla Karina Ramírez Marques', '$2y$10$9S6Z.7qQfSAluAgYVHKMduyLyP0fVOqVrIdFmRvgt55ili8qEXi1u', 'kramirez32@ucol.mx', 2);
 
 --
 -- Índices para tablas volcadas
@@ -230,7 +246,7 @@ ALTER TABLE `reaction_type`
 -- AUTO_INCREMENT de la tabla `role`
 --
 ALTER TABLE `role`
-  MODIFY `ID_Role` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `topics`
@@ -242,7 +258,7 @@ ALTER TABLE `topics`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
