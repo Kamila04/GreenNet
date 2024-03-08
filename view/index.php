@@ -15,7 +15,7 @@ if(isset($_SESSION['name'])){
     <title>GREENNET</title>
     <link rel="stylesheet" href="view/css/fonts.css">
     <link rel="stylesheet" href="view/css/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="iview/mg/logo_mission_vision.png">
+    <link rel="shortcut icon" type="image/x-icon" href="view/mg/logo_mission_vision.png">
 </head>
 <body>
     <header>
