@@ -1,10 +1,11 @@
 <?php
+try{
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 if(isset($_SESSION['name'])){
     $datos_usuario = $_SESSION['name'];
-    $logout = "<li><a href='./?m=logout'>Cerrar Sesión</a></li>";
+    $logout = "<li><a href='". urlsite. "/logout'>Cerrar Sesión</a></li>";
 } else {
-    $datos_usuario = '<a class="unirsebtn" href="./?m=login">Registrate!</a>';
+    $datos_usuario = '<a class="unirsebtn" href="' .urlsite . '/login">Registrate!</a>';
     $logout = "";
 }
 ?>
@@ -15,19 +16,19 @@ if(isset($_SESSION['name'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GREENNET</title>
-    <link rel="stylesheet" href="view/css/fonts.css">
-    <link rel="stylesheet" href="view/css/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="view/mg/logo_mission_vision.png">
+    <link rel="stylesheet" href=<?php echo urlsite ."/view/css/fonts.css"; ?>>
+    <link rel="stylesheet" href= <?php echo urlsite ."/view/css/style.css"; ?>>
+    <link rel="shortcut icon" type="image/x-icon" href= <?php echo urlsite ."/view/img/logo_mission_vision.png"; ?> >
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="view/img/logo_mission_vision.png" alt="Logo de mi foro" class="img-logo">
+            <img src= <?php echo urlsite ."/view/img/logo_mission_vision.png"; ?> alt="Logo de mi foro" class="img-logo">
             <h1 class="nombre-logo">GreenNet</h1>
         </div>
         <div class="perfil">
             <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
-            <img src="view/img/perfil.jpg" alt="Foto de perfil" class="img-perfil" id="perfil_Icono">
+            <img src= <?php echo urlsite ."/view/img/perfil.jpg"; ?> alt="Foto de perfil" class="img-perfil" id="perfil_Icono">
         </div>
     </header>
     <div class="app">
@@ -72,7 +73,7 @@ if(isset($_SESSION['name'])){
         <div class="mi-perfil">
             <div class="image-container">
                 <span>Crear Post</span>
-                <img src="view/img/perfil_img.jpg" alt="Imagen">
+                <img src=<?php echo urlsite."/view/img/perfil_img.jpg"; ?> alt="Imagen">
                 <button>Enviar</button>
             </div>
             <div class="input-container">
@@ -89,6 +90,10 @@ if(isset($_SESSION['name'])){
         </section>
         
     </div>
-    <script src="view/js/fun_script.js"></script>
+    <script src=<?php echo urlsite. "/view/js/fun_script.js" ?>></script>
 </body>
 </html>
+<?php } catch(Exception $e){
+    header("Location: ./error404");
+} 
+?>
