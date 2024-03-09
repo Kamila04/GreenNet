@@ -24,7 +24,7 @@ class conexionController{
         $partes = explode('?', $url);
         if(count($partes) > 1){
             if($_GET['m'] !== "login")
-                header("Location: /?m=login");
+                header("Location: ./login");
         }
         require_once("view/login.php");
     }
@@ -41,10 +41,10 @@ class conexionController{
                 $conn->insert("user", ["Username"=>$name, "Email"=>$email, "Password"=>$hashed_password, "ID_Role"=>2]);
                 conexionController::initAccount();
             } else {
-                header("Location: /?m=login");
+                header("Location: ./login");
             }
         } else {
-            header("Location: /?m=login");
+            header("Location: ./login");
         }
     }
 
@@ -63,14 +63,23 @@ class conexionController{
                 }
             }
         }
-        header("Location: /?m=login");
+        header("Location: ./login");
     }
 
     static function logout() {
         session_start();
-        session_unset();
-        session_destroy();
-        header("Location: /");
+        if(!empty($_SESSION)){
+            session_unset();
+            session_destroy();
+            header("Location: /");
+        }    
+        else{
+            header("Location: ./error404");
+        }        
+    }
+
+    static function error404(){
+        require_once("view/error404.php");
     }
 }
 ?>
