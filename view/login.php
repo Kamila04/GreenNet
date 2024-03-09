@@ -11,8 +11,8 @@ if(isset($_SESSION['name'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="/view/css/login.css">
-    <link rel="shortcut icon" type="image/x-icon" href="/view/img/logo_mission_vision.png">
+    <link rel="stylesheet" href="view/css/login.css">
+    <link rel="shortcut icon" type="image/x-icon" href="view/img/logo_mission_vision.png">
     <title>GREENNET - Login</title>
 </head>
 <body>
@@ -43,13 +43,13 @@ if(isset($_SESSION['name'])){
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
-                    <img width="40%" src="/view/img/logo_ODS.png" title="RedNet" alt="logo de RedNet">
+                    <img width="40%" src="view/img/logo_ODS.png" title="RedNet" alt="logo de RedNet">
                     <h1>¡Bienvenido de nuevo!</h1>
                     <p>Inicia sesión para utilizar todas las funciones del sitio</p>
                     <button class="hidden" id="login">Iniciar sesión</button>
                 </div>
                 <div class="toggle-panel toggle-right">
-                    <img width="40%" src="/view/img/logo_ODS.png" title="RedNet" alt="logo de RedNet">
+                    <img width="40%" src="view/img/logo_ODS.png" title="RedNet" alt="logo de RedNet">
                     <h1>¡Hola, amigo!</h1>
                     <p>Regístrate con tus datos personales para utilizar todas las funciones del sitio</p>
                     <button class="hidden" id="register">Registrarse</button>
@@ -57,6 +57,6 @@ if(isset($_SESSION['name'])){
             </div>
         </div>
     </div>
-    <script src="/view/js/login_script.js"></script>
+    <script src="view/js/login_script.js"></script>
 </body>
 </html>
