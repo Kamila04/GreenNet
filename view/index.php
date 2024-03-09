@@ -25,27 +25,44 @@ if(isset($_SESSION['name'])){
         </div>
         <div class="perfil">
             <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
-            <img src="view/img/perfil.jpg" alt="Foto de perfil" class="img-perfil">
+            <img src="view/img/perfil.jpg" alt="Foto de perfil" class="img-perfil" id="perfil_Icono">
         </div>
     </header>
     <div class="app">
+    <div id="detailsDiv">
+        <span>GreenNet</span>
+        <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
+        <p class="email-perfil"><?php echo $datos_usuario ?></p>
+        <ul>
+            <li><a href="#">Configuración</a></li>
+            <li><a href="#">Cambiar de Cuenta</a></li>
+            <li><a href="#">Cerrar Sesión</a></li>
+        </ul>
+    </div>
         <aside class="navegacion">
             <div class="temas">
                 <h2>Temas</h2>
+                <div class="temasopciones">
                 <ul>
                     <li>HAMBRE CERO</li>
                     <li>VIDA MARINA</li>
+                    <li>BASURA EN EL MEDIO AMBIENTE</li>
+                    <li>BASURA EN EL MEDIO AMBIENTE</li>
+                    <li>BASURA EN EL MEDIO AMBIENTE</li>
                 </ul>
+                </div>
             </div>
             <div class="busqueda">
                 <h2>¿Buscas algo?</h2>
                 <input type="search" class="search-bar" name="search" id="search" placeholder="Escribe aquí...">
-                <h2>Lo mas popular</h2>
+                <div class="populares">
+                <h2>Popular</h2>
                 <ul>
                     <li>¿3ra guerra mundial 2024?</li>
-                    <li>hackers furry</li>
+                    <li>La destrucción de la tierra</li>
                     <li>MrBeast construye 100 pozos en África</li>
                 </ul>
+                </div>
             </div>
             <span class="copyright">Copyright 2024© GreenNet</span>
         </aside>
@@ -70,5 +87,6 @@ if(isset($_SESSION['name'])){
         </section>
         
     </div>
+    <script src="view/js/fun_script.js"></script>
 </body>
 </html>
