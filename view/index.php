@@ -2,8 +2,10 @@
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 if(isset($_SESSION['name'])){
     $datos_usuario = $_SESSION['name'];
+    $logout = "<li><a href='./?m=logout'>Cerrar Sesión</a></li>";
 } else {
     $datos_usuario = '<a class="unirsebtn" href="./?m=login">Registrate!</a>';
+    $logout = "";
 }
 ?>
 
@@ -36,7 +38,7 @@ if(isset($_SESSION['name'])){
         <ul>
             <li><a href="#">Configuración</a></li>
             <li><a href="#">Cambiar de Cuenta</a></li>
-            <li><a href="#">Cerrar Sesión</a></li>
+            <?php echo $logout; ?>
         </ul>
     </div>
         <aside class="navegacion">

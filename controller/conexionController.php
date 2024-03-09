@@ -68,9 +68,18 @@ class conexionController{
 
     static function logout() {
         session_start();
-        session_unset();
-        session_destroy();
-        header("Location: /");
+        if(!empty($_SESSION)){
+            session_unset();
+            session_destroy();
+            header("Location: /");
+        }    
+        else{
+            header("Location: ./?m=error404");
+        }        
+    }
+
+    static function error404(){
+        require_once("view/error404.php");
     }
 }
 ?>
