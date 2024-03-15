@@ -16,6 +16,11 @@ class conexionController{
             // Redirigir al usuario a la misma página sin los parámetros
             header("Location: /");
         }
+        // Obtener las publicaciones
+        $conn = new conexion();
+        $publicaciones = $conn->select("publication");
+    
+        // Cargar la vista con las publicaciones
         require_once("view/index.php");
     }
 
@@ -80,6 +85,27 @@ class conexionController{
 
     static function error404(){
         require_once("view/error404.php");
+    }
+
+    static function enviarPublicacion() {
+        if(isset($_POST['titulo']) && isset($_POST['contenido'])){
+            $titulo = $_POST['titulo'];
+            $contenido = $_POST['contenido'];
+            $fecha = date("Y-m-d");
+            $conn = new conexion();
+            $inserted = $conn->insert("publication", ["Title"=>$titulo, "Content"=>$contenido, "Date"=>$fecha]);
+            if($inserted) {
+                header("Location: /");
+                return;
+            } else {
+                // Manejar el error de inserción según sea necesario
+                header("Location: ./error404");
+                return;
+            }
+        } else {
+            header("Location: /");
+            return;
+        }
     }
 }
 ?>
