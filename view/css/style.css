@@ -435,3 +435,42 @@ input[type="text"],
     border-left: 1px solid var(--background-mid-light-color);
     overflow-y: auto;
 }
+.publicacion-crear {
+    margin-top: 30px; /* Espacio entre el formulario y el feed */
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    max-width: 90%;
+    width: 90%;
+    margin: 2% 3%;
+    background-color: rgb(234, 234, 234);
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.feed h2 {
+    font-size: 1.8em;
+    margin-bottom: 0px; 
+    color: var(--text-dark-color); 
+}
+
+.feed h {
+    font-size: 12px;
+    margin-left: 1px;
+}
+
+.feed p {
+   
+    margin-top: 10px;
+}
+
+.feed .publicacion {
+    border-bottom: 1px solid var(--background-mid-light-color);
+    padding-bottom: 20px;
+}
+

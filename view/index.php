@@ -50,21 +50,32 @@
             <span class="copyright">Copyright 2024© GreenNet</span>
         </aside>
         <main class="publicaciones">
-        <div class="mi-perfil">
-            <div class="image-container">
-                <span>Crear Post</span>
-                <img src=<?php echo urlsite."/view/img/perfil_img.jpg"; ?> alt="Imagen">
-                <button>Enviar</button>
+            <div class="publicacion-crear">
+        <form action="index.php?m=enviarPublicacion" method="post">
+            <div class="mi-perfil">
+                <div class="image-container">
+                    <span>Crear Post</span>
+                    <img src="<?php echo urlsite; ?>./view/img/perfil_img.jpg" alt="Imagen">
+                    <button type="submit">Enviar</button> 
+                </div>
+                <div class="input-container">
+                    <input type="text" name="titulo" placeholder="Título"> 
+                    <textarea name="contenido" placeholder="Escribe tu idea..."></textarea> 
+                </div>
             </div>
-            <div class="input-container">
-                <input type="text" placeholder="Título">
-                <textarea placeholder="Escribe tu ídea..."></textarea>
+        </form>
+        <section class="feed">
+        <?php for ($i = count($publicaciones) - 1; $i >= 0; $i--): ?>
+            <?php $publicacion = $publicaciones[$i]; ?>
+            <div class="publicacion">
+                <h2><?php echo $publicacion['Title']; ?></h2>
+                <h><?php echo $publicacion['Date']; ?></h>
+                <p><?php echo $publicacion['Content']; ?></p>
             </div>
-        </div>
-            <section class="feed">
-
-            </section>
-        </main>
+            <br>
+        <?php endfor; ?>
+    </section>
+</main>
         <section class="comentarios">
 
         </section>
