@@ -1,4 +1,7 @@
 Options All -Indexes
-
+ErrorDocument 404 /index.php?m=error404
+ErrorDocument 403 /index.php?m=error404
 RewriteEngine On
-RewriteRule ^([a-zA-Z0-9/]+)$ index.php?m=$1
+RewriteRule ^([a-zA-Z0-9/]+)$ index.php?m=$1 [L,QSA]
+RewriteCond %{REQUEST_URI} !^/index.php$
+RewriteRule ^(.*\.php)$ - [R=404,L]
