@@ -8,6 +8,14 @@ class conexionController{
     }
 
     static function index() {
+        // Obtener la URL actual
+        $url = $_SERVER['REQUEST_URI'];
+        // Separar la parte antes y después del signo ?
+        $partes = explode('?', $url);
+        if(count($partes) > 1){
+            // Redirigir al usuario a la misma página sin los parámetros
+            header("Location: /");
+        }
         // Obtener las publicaciones
         $conn = new conexion();
         $publicaciones = $conn->select("publication");
