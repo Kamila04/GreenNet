@@ -24,12 +24,11 @@ class conexionController{
         require_once("view/index.php");
     }
 
-    static function login() {
+    static function login($error = null) {
         $url = $_SERVER['REQUEST_URI'];
         $partes = explode('?', $url);
-        if(count($partes) > 1){
-            if($_GET['m'] !== "login")
-                header("Location: ./login");
+        if((count($partes) > 1 || $_GET['m'] !== "login") && !isset($_GET['error'])){
+            header("Location: ./login?error=$error");
         }
         require_once("view/login.php");
     }
@@ -46,10 +45,10 @@ class conexionController{
                 $conn->insert("user", ["Username"=>$name, "Email"=>$email, "Password"=>$hashed_password, "ID_Role"=>2]);
                 conexionController::initAccount();
             } else {
-                header("Location: ./login");
+                conexionController::login("Error: Este Email ya ha sido usado");
             }
         } else {
-            header("Location: ./login");
+            conexionController::login("Error: No se pudo crear la cuenta");
         }
     }
 
@@ -64,12 +63,25 @@ class conexionController{
                     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
                     $_SESSION["name"] = $verificar[0]['Username'];
                     $_SESSION["key"] = $verificar[0]["ID_user"];
+                    $_SESSION["email"] = $verificar[0]['Email'];
+                    $_SESSION["pass"] = $verificar[0]['Password'];
+                    $_SESSION["role"] = $verificar[0]['ID_Role'];
                     header("Location: /");
                     return;
+                } else {
+                    conexionController::login("No se pudo iniciar sesión, intente de nuevo");
+                    return;
                 }
+            } else {
+                conexionController::login("No se pudo iniciar sesión");
+                return;
             }
+        } else {
+            conexionController::login("Sin datos de sesion");
+            return;
         }
-        header("Location: ./login");
+        conexionController::login("Error");
+        return;
     }
 
     static function logout() {
