@@ -63,6 +63,9 @@ class conexionController{
                 if(password_verify($pass, $verificar[0]['Password'])){
                     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
                     $_SESSION["name"] = $verificar[0]['Username'];
+                    $_SESSION["email"] = $verificar[0]['Email'];
+                    $_SESSION["pass"] = $verificar[0]['Password'];
+                    $_SESSION["role"] = $verificar[0]['ID_Role'];
                     header("Location: /");
                     return;
                 }
