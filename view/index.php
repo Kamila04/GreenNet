@@ -1,27 +1,26 @@
 <?php
+    include("./view/layout/main_header.php");
+    include("./view/layout/main_footer.php");
+    include("./view/layout/detailsPanel.php");
     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     if(isset($_SESSION['name'])){
         $datos_usuario = $_SESSION['name'];
-        $logout = "<li><a href='". urlsite. "/logout'>Cerrar Sesión</a></li>";
-    } else {
+        $username = $_SESSION['name'];
+        $useremail = $_SESSION['email'];
+    } else{
         $datos_usuario = '<a class="unirsebtn" href="' .urlsite . '/login">Registrate!</a>';
-        $logout = "";
-    }     
-    include("./view/layout/main_header.php");
-    include("./view/layout/main_footer.php");
+    }
+    
     main_header($datos_usuario);
 ?>
     <div class="app">
-    <div id="detailsDiv">
-        <span>GreenNet</span>
-        <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
-        <p class="email-perfil"><?php echo $datos_usuario ?></p>
-        <ul>
-            <li><a href="#">Configuración</a></li>
-            <li><a href="#">Cambiar de Cuenta</a></li>
-            <?php echo $logout; ?>
-        </ul>
-    </div>
+        <?php 
+        if(isset($username)){
+            userPanel($username, $useremail);
+        } else {
+            registerPanel();
+        }
+        ?>
         <aside class="navegacion">
             <div class="temas">
                 <h2>Temas</h2>

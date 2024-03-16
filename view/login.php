@@ -4,6 +4,15 @@
     login_header();
 ?>
 <body>
+    <?php 
+    if(isset($_GET['error'])) {
+    ?>
+    <div class="error-panel inactive">
+        <h2 class="message-error">
+            <?php echo $_GET['error'] ?>
+        </h2>
+    </div>
+    <?php } ?>
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form action="index.php" method="post">
