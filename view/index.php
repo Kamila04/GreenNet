@@ -4,11 +4,30 @@
     include("./view/layout/detailsPanel.php");
     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     if(isset($_SESSION['name'])){
+        $account = "<li><a href=". urlsite."/Myaccount". ">Mi cuenta</a></li>";
         $datos_usuario = $_SESSION['name'];
         $username = $_SESSION['name'];
         $useremail = $_SESSION['email'];
     } else{
         $datos_usuario = '<a class="unirsebtn" href="' .urlsite . '/login">Registrate!</a>';
+        $logout = "";
+        $account = "";
+    }     
+    include("./view/layout/main_header.php");
+    include("./view/layout/main_footer.php");
+    main_header($datos_usuario);
+?>
+    <div class="app">
+    <div id="detailsDiv">
+        <span>GreenNet</span>
+        <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
+        <p class="email-perfil"><?php echo $datos_usuario ?></p>
+        <ul>
+            <?php echo $account;?>
+            <li><a href="#">Cambiar de Cuenta</a></li>
+            <?php echo $logout; ?>
+        </ul>
+    </div>
     }
     
     main_header($datos_usuario);

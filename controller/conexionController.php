@@ -62,6 +62,7 @@ class conexionController{
                 if(password_verify($pass, $verificar[0]['Password'])){
                     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
                     $_SESSION["name"] = $verificar[0]['Username'];
+                    $_SESSION["key"] = $verificar[0]["ID_user"];
                     $_SESSION["email"] = $verificar[0]['Email'];
                     $_SESSION["pass"] = $verificar[0]['Password'];
                     $_SESSION["role"] = $verificar[0]['ID_Role'];
@@ -101,11 +102,13 @@ class conexionController{
 
     static function enviarPublicacion() {
         if(isset($_POST['titulo']) && isset($_POST['contenido'])){
+            if(session_status() != PHP_SESSION_ACTIVE) session_start();
             $titulo = $_POST['titulo'];
             $contenido = $_POST['contenido'];
             $fecha = date("Y-m-d");
+            $key = $_SESSION["key"];
             $conn = new conexion();
-            $inserted = $conn->insert("publication", ["Title"=>$titulo, "Content"=>$contenido, "Date"=>$fecha]);
+            $inserted = $conn->insert("publication", ["Title"=>$titulo, "Content"=>$contenido, "Date"=>$fecha, "ID_user"=>$key]);
             if($inserted) {
                 header("Location: /");
                 return;
@@ -117,6 +120,36 @@ class conexionController{
         } else {
             header("Location: /");
             return;
+        }
+    }
+
+    static function Myaccount(){
+        if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+        if(!empty($_SESSION)){
+            $url = $_SERVER['REQUEST_URI'];
+            // Separar la parte antes y después del signo ?
+            $partes = explode('?', $url);
+            if(count($partes) > 1){
+                // Redirigir al usuario a la misma página sin los parámetros
+                header("Location: ./Myaccount");
+            }
+            $ID_user = $_SESSION["key"];
+            $conn = new conexion();
+            $publis = $conn->select("publication", condiciones: ["ID_user" => $ID_user]);
+            require_once("view/perfil.php");
+        }else{
+            header("Location: ./error404");
+        }
+    }
+
+    static function deletePubli(){
+        if(isset($_POST["deleB"])){
+            $publi = $_POST["deleB"];
+            $conn = new conexion;
+            $delete = $conn->delete("publication", condiciones:["ID_publication" => $publi]);
+            if($delete){
+                header("Location: ./Myaccount");
+            } 
         }
     }
 }
