@@ -213,3 +213,16 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+.error-panel {
+    position: fixed; /* Fija el panel en la pantalla */
+    top: 0; /* Posición desde la parte superior */
+    left: 0; /* Posición desde la izquierda */
+    width: 100%; /* Ancho completo */
+    background-color: rgb(233, 56, 56); /* Fondo rojo para el error */
+    color: white; /* Texto en color blanco */
+    text-align: center; /* Centra el texto horizontalmente */
+    padding: 10px 0; /* Espaciado interno para dar altura al panel */
+    z-index: 1001; /* Asegura que el panel esté por encima de otros elementos */
+    border-bottom: 1px solid rgb(204, 156, 164); /* Borde inferior rosa */
+}
