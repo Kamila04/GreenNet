@@ -1,11 +1,13 @@
 <?php
     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     if(isset($_SESSION['name'])){
+        $account = "<li><a href=". urlsite."/Myaccount". ">Mi cuenta</a></li>";
         $datos_usuario = $_SESSION['name'];
         $logout = "<li><a href='". urlsite. "/logout'>Cerrar Sesión</a></li>";
     } else {
         $datos_usuario = '<a class="unirsebtn" href="' .urlsite . '/login">Registrate!</a>';
         $logout = "";
+        $account = "";
     }     
     include("./view/layout/main_header.php");
     include("./view/layout/main_footer.php");
@@ -17,7 +19,7 @@
         <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
         <p class="email-perfil"><?php echo $datos_usuario ?></p>
         <ul>
-            <li><a href="#">Configuración</a></li>
+            <?php echo $account;?>
             <li><a href="#">Cambiar de Cuenta</a></li>
             <?php echo $logout; ?>
         </ul>
