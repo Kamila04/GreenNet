@@ -5,6 +5,7 @@
     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     if(isset($_SESSION['name'])){
         $account = "<li><a href=". urlsite."/Myaccount". ">Mi cuenta</a></li>";
+        $logout = "<li><a href='". urlsite. "/logout'>Cerrar Sesión</a></li>";
         $datos_usuario = $_SESSION['name'];
         $username = $_SESSION['name'];
         $useremail = $_SESSION['email'];
@@ -16,14 +17,13 @@
   
     main_header($datos_usuario);
 ?>
-    <div class="app">
+   
     <div id="detailsDiv">
         <span>GreenNet</span>
         <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
-        <p class="email-perfil"><?php echo $datos_usuario ?></p>
+        <p class="email-perfil">kramirez32@ucol.mx</p> <!--< ?php echo $datos_usuario ?>-->
         <ul>
             <?php echo $account;?>
-            <li><a href="#">Cambiar de Cuenta</a></li>
             <?php echo $logout; ?>
         </ul>
     </div>
