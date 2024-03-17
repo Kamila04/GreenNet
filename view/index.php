@@ -13,8 +13,7 @@
         $logout = "";
         $account = "";
     }     
-    include("./view/layout/main_header.php");
-    include("./view/layout/main_footer.php");
+  
     main_header($datos_usuario);
 ?>
     <div class="app">
@@ -28,10 +27,7 @@
             <?php echo $logout; ?>
         </ul>
     </div>
-    }
-    
-    main_header($datos_usuario);
-?>
+
     <div class="app">
         <?php 
         if(isset($username)){
