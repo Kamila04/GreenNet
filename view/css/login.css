@@ -17,6 +17,24 @@ body{
     height: 100vh;
 }
 
+.fondo-login{
+	width: 100vw;
+    height: 100vh;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.flecha{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+    position:absolute; 
+    top:7%; 
+    left:5%;
+}
+
 .container{
     background-color: #007020;
     border-radius: 30px;
