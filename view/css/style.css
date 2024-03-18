@@ -464,6 +464,16 @@ input[type="text"],
     border-left: 1px solid var(--background-mid-light-color);
     overflow-y: auto;
 }
+<<<<<<< HEAD
+=======
+
+.publicacion {
+    flex: 5 1 0;
+}
+.publicacion-crear {
+    margin-top: 30px; /* Espacio entre el formulario y el feed */
+}
+>>>>>>> 72d4b367cda80884430b71dd2b4d66b5a656c7c9
 
 .feed {
     display: flex;
