@@ -4,7 +4,7 @@
     include("./view/layout/detailsPanel.php");
     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     if(isset($_SESSION['name'])){
-        $account = "<li><a href=". urlsite."/Myaccount". ">Mi perfil</a></li>";
+        $account = "<li><a href=". urlsite."/Myaccount". ">Mi cuenta</a></li>";
         $logout = "<li><a href='". urlsite. "/logout'>Cerrar Sesión</a></li>";
         $datos_usuario = $_SESSION['name'];
         $username = $_SESSION['name'];
@@ -19,6 +19,7 @@
   
     main_header($datos_usuario);
 ?>
+
 <!--Panel del perfil-->
     <div id="detailsDiv">
         <b>GreenNet</b><br>
