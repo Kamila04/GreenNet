@@ -328,7 +328,6 @@ header {
     padding: 5%;
     max-width: 95%;
     margin: 2% 3%;
-    /*background-color: #a3a3a3;*/
     background-color: var(--primary-color);
     align-items: center;
     border-radius: 8px;
