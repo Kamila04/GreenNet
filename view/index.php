@@ -10,18 +10,21 @@
         $username = $_SESSION['name'];
         $useremail = $_SESSION['email'];
     } else{
-        $datos_usuario = '<a class="unirsebtn" href="' .urlsite . '/login">Registrate!</a>';
+        $datos_usuario = '<a class="unirsebtn" href="' .urlsite . '/login">¡Inicia sesión o Registrate!</a>';
         $logout = "";
         $account = "";
+        $username = "";
+        $useremail = "";
     }     
   
     main_header($datos_usuario);
 ?>
-   
+
+<!--Panel del perfil-->
     <div id="detailsDiv">
-        <span>GreenNet</span>
-        <p class="nombre-perfil"><?php echo $datos_usuario ?></p>
-        <p class="email-perfil">kramirez32@ucol.mx</p> <!--< ?php echo $datos_usuario ?>-->
+        <b>GreenNet</b><br>
+        <p class="nombre-perfil"><?php echo $username ?></p>
+        <p class="email-perfil"><?php echo $useremail ?></p>
         <ul>
             <?php echo $account;?>
             <?php echo $logout; ?>
@@ -36,19 +39,34 @@
             registerPanel();
         }
         ?>
+        <!--Mostrar temas-->
         <aside class="navegacion">
             <div class="temas">
                 <h2>Temas</h2>
                 <div class="temasopciones">
                 <ul>
+                    <li>FIN DE LA POBREZA</li>
                     <li>HAMBRE CERO</li>
-                    <li>VIDA MARINA</li>
-                    <li>BASURA EN EL MEDIO AMBIENTE</li>
-                    <li>BASURA EN EL MEDIO AMBIENTE</li>
-                    <li>BASURA EN EL MEDIO AMBIENTE</li>
+                    <li>SALUD Y BIENESTAR</li>
+                    <li>EDUCACIÓN DE CALIDAD</li>
+                    <li>IGUALDAD DE GÉNERO</li>
+                    <li>AGUA LIMPIA Y SANEAMIENTO</li>
+                    <li>ENERGÍA ASEQUIBLE Y NO CONTAMINANTE</li>
+                    <li>TRABAJO DECENTE Y CRECIMIENTO ECONÓMICO</li>
+                    <li>INDUSTRIA, INNOVACIÓN E INFRAESTRUCTURA</li>
+                    <li>REDUCCIÓN DE LAS DESIGUALDADES</li>
+                    <li>CIUDADES Y COMUNIDADES SOSTENIBLE</li>
+                    <li>PRODUCCIÓN Y CONSUMO RESPONSABLE</li>
+                    <li>ACCIÓN POR EL CLIMA</li>
+                    <li>VIDA SUBMARINA</li>
+                    <li>VIDA DE ECOSISTEMAS TERRESTRES</li>
+                    <li>PAZ, JUSTICIA E INSTITUCIONES SÓLIDAS</li>
+                    <li>ALIANZAS PARA LOGRAR LOS OBJETIVOS</li>
+                    
                 </ul>
                 </div>
             </div>
+            <!--Buscador-->
             <div class="busqueda">
                 <h2>¿Buscas algo?</h2>
                 <input type="search" class="search-bar" name="search" id="search" placeholder="Escribe aquí...">
@@ -63,35 +81,53 @@
             </div>
             <span class="copyright">Copyright 2024© GreenNet</span>
         </aside>
+        <!-- PUBLICACIONES -->
         <main class="publicaciones">
+            <!--Panel para crear publicaciones-->
             <div class="publicacion-crear">
-        <form action="index.php?m=enviarPublicacion" method="post">
-            <div class="mi-perfil">
-                <div class="image-container">
-                    <span>Crear Post</span>
-                    <img src="<?php echo urlsite; ?>./view/img/perfil_img.jpg" alt="Imagen">
-                    <button type="submit">Enviar</button> 
-                </div>
-                <div class="input-container">
-                    <input type="text" name="titulo" placeholder="Título"> 
-                    <textarea name="contenido" placeholder="Escribe tu idea..."></textarea> 
-                </div>
-            </div>
-        </form>
-        <section class="feed">
-        <?php for ($i = count($publicaciones) - 1; $i >= 0; $i--): ?>
-            <?php $publicacion = $publicaciones[$i]; ?>
-            <div class="publicacion">
-                <h2><?php echo $publicacion['Title']; ?></h2>
-                <h><?php echo $publicacion['Date']; ?></h>
-                <p><?php echo $publicacion['Content']; ?></p>
-            </div>
-            <br>
-        <?php endfor; ?>
-    </section>
-</main>
+                <form action="index.php?m=enviarPublicacion" method="post">
+                    <div class="mi-perfil">
+                        <div class="image-container">
+                            <span>Crear Post</span>
+                            <img src="<?php echo urlsite; ?>./view/img/perfil_img.jpg" alt="Imagen">
+                            <button type="submit">Enviar</button> 
+                        </div>
+                        <!--Titulo y contenido de la nueva publicacion-->
+                        <div class="input-container">
+                            <input type="text" name="titulo" placeholder="Título"> 
+                            <textarea name="contenido" placeholder="Escribe tu idea..."></textarea> 
+                        </div>
+                    </div>
+                </form>
+            <!--Ciclo para imprimir publicaciones-->
+            <section class="feed">
+                <?php for ($i = count($publicaciones) - 1; $i >= 0; $i--): ?>
+                    <?php $publicacion = $publicaciones[$i]; ?>
+                    <div class="publicacion">
+                        <div class="publicacion-unidad">
+                            <!-- Insertar nombre del usuario que hizo el post-->
+                            <h2><?php echo $publicacion['Title']; ?></h2>
+                            <h><?php echo $publicacion['Date']; ?></h><br><br>
+                            <div class="contenido"><p><?php echo $publicacion['Content']; ?></p></div>
+                        </div><br><br>
+                        <img src="/view/img/comments.png" width="30px">
+                        <button name="vercomments" value="" title="Ver comentarios de la publicación"> Ver comentarios y comentar</button>
+                    </div><br>
+                <?php endfor; ?>
+            </section>
+        </main>
+        <!--Ciclo para imprimir comentarios-->
         <section class="comentarios">
-
+            <div class="publicacion-unidad">
+                <div class="contenido">
+                    <h1>COMENTARIOS</h1><br>
+                    <h2>Aquí se abre un panel con los comentarios de la publicación seleccionada</h2><br><br>
+                    <h3>EJEMPLO DE COMENTARIO</h3><br>
+                    <h3>En algún punto de mi vida comencé a cuestionarme el hecho de que tanto la familia como la sociedad en general, marcan un camino de por dónde deberías ir o cuáles deberían ser tus metas.</h3><br>
+                    <h3>En lugar de intentar adoctrinar a las personas desde pequeñas y hacerles sentir mal por no ser el modelo "perfecto" que se desea; se debería inculcar el encontrar la felicidad.</h3><br>
+                    <h3>No todos desean tener una gran empresa y estar entre ejecutivos, el sueño de toda mujer no es casarse y ser ama de casa, no a todas las personas les agrada la idea de vivir en la ciudad de por vida, y así hay varios ejemplos más.</h3><br>
+                </div>
+            </div>
         </section>
         
     </div>

@@ -21,7 +21,7 @@ function registerPanel(){
 
 <div id="detailsDiv">
         <span>GreenNet</span>
-        <?php echo '<a class="unirsebtn" href="' .urlsite . '/login">Registrate!</a>' ?>
+        <?php echo '<a class="unirsebtn" href="' .urlsite . '/login">¡Inicia sesión o Registrate!</a>' ?>
     </div>
 
 <?php } ?>
