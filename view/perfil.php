@@ -67,15 +67,25 @@
                         <div class="contenido"><p> <?php echo $p['Content'];?></p></div>
                     </div><br><br>
                     <div class="opciones-miperfil">
-
-                        <!-- FORMULARIO Y BOTON PARA EDITAR PUBLICACION JUSTO AQUI-->
-                        <form action="index.php" method="POST">
-                            <img src="/view/img/edit.png" width="30px">
-                            <button name="editB" value="" <?php echo $p["ID_publication"] ?> title="Editar publicación">Editar</button>
-                            <input type="hidden" name="m" value="">
-                        </form>
-                        <!-- FORMULARIO Y BOTON PARA EDITAR PUBLICACION JUSTO AQUI-->
-
+                        <img src="/view/img/edit.png" width="30px">
+                        <button id="Edit_Button" title="Editar publicación" onclick="openEdit(<?php echo $p['ID_publication']; ?>)">Editar</button>
+                        <div class="EditarDiv" id="EditDiv">
+                            <form action="index.php" method="POST" class="EditForm">
+                                    <div class="image-container">
+                                        <span>Editar Post</span>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="text" name="titulo" placeholder="Título" required value="<?php echo $p['Title']; ?>"> 
+                                        <textarea name="contenido" placeholder="Escribe tu idea..." required><?php echo $p['Content']; ?>"</textarea> 
+                                    </div>
+                                    <div class="button-container">
+                                        <button name="editB" value="" <?php echo $p["ID_publication"] ?> title="Editar publicación">Editar</button>
+                                        <button type="button" id="CancelarButton_Edit" class="CancelarButton">Cancelar</button>
+                                    </div>
+                                    <input type="hidden" name="m" value="">
+                            </form>
+                        </div>
+                
                         <form action="index.php" method="POST">
                             <img src="/view/img/delete.png" width="30px">
                             <button name="deleB" value= "<?php echo $p["ID_publication"] ?>" title="Eliminar publicación">Eliminar</button>
@@ -102,7 +112,7 @@
                 </div>
         </section>
     </div>
-    
+    <div id="Sombreado"></div>
 </body>
 <?php main_footer();?>
 </html>

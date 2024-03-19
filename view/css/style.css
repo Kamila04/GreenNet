@@ -112,6 +112,25 @@ header {
     text-decoration: none;
 }
 
+#EditDiv {
+    display: none;
+    z-index: 6;
+    top: 0;
+    position: absolute;
+    max-width: 90%;
+    width: 90%;
+    max-height: 25%;
+    margin: 2% 3%;
+    background-color: #0094c5;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 8px;
+}
+#EditDiv .EditForm {
+    background-color: red;
+}
+
 .logo, .perfil {
     display: flex;
     align-items: center;
