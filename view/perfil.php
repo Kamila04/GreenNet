@@ -78,7 +78,7 @@
 
                         <form action="index.php" method="POST">
                             <img src="/view/img/delete.png" width="30px">
-                            <button name="deleB" value="" <?php echo $p["ID_publication"] ?> title="Eliminar publicación">Eliminar</button>
+                            <button name="deleB" value= "<?php echo $p["ID_publication"] ?>" title="Eliminar publicación">Eliminar</button>
                             <input type="hidden" name="m" value="deletePubli">
                         </form>
                         <img src="/view/img/comments.png" width="30px">
