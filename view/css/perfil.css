@@ -114,6 +114,134 @@ header {
 #detailsDiv li a {
     text-decoration: none;
 }
+#EditDiv {
+    display: none;
+    z-index: 2;
+    position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 40%;
+        max-width: 40%;
+        height: 40%;
+        max-height: 40%;
+        min-height: 40%;
+        width: 40%; /* Ajusta el ancho según tus necesidades */
+    margin: 2% 3%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    border-left: 8px solid #0074D9;
+    flex-direction: column;
+    background-color: #b9bcbd;
+    align-items: center;
+    justify-content: space-between;
+}
+#EditDiv .EditForm {
+    background-color: transparent;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    background-color: #b9bcbd;
+    align-items: left;
+    flex-direction: column;
+    justify-content: space-between; 
+
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    box-shadow: 0 0 10px #34343433;
+}
+
+.EditForm #UserIcono {
+    border-radius: 50%;
+    border: 3px solid black;
+    object-fit: contain;
+    max-width: 50%;
+    height: 70%;
+    max-height: 70%;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.EditForm .input-container {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    max-height: 60%;
+    min-height: 60%;
+    margin: 10px;
+    height: 60%;
+}
+.EditForm .button-container {
+    order: 3;
+    display: flex;
+    max-height: 10%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 5px;
+    min-height: 20%;
+    height: 20%;
+ 
+}
+.EditForm .image-container {
+    text-align: center;
+    order: 1;
+    max-height: 10%;
+    min-height: 10%;
+    height: 10%;
+    max-width: 100%;
+    width: 100%;
+}
+.EditForm span {
+    text-wrap: nowrap;
+    font-size: 16px;
+    color: #282828;
+    font-weight: bold;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+}
+.button-container button {
+    margin-top: 10px;
+    background-color: #5500ff;
+    color: #FFF;
+    border: none;
+    width: 20%;
+    max-width: 20%;
+    min-width: 20%;
+    font-weight: bold;
+    border-radius: 5px;
+    max-height: 35px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    margin-left: 0%;
+    margin: 10px;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+.button-container button:hover {
+    background-color: white;
+    color: #5500ff;
+}
+.button-container .CancelarButton:hover {
+    background-color:rgb(116, 116, 116)e;
+    color: #b7b7b7;
+}
+.button-container #CancelarButton_Edit {
+    background-color: #424242;
+}
+#Sombreado {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #0000004a;
+    z-index: 1;
+    display: none;
+}
 
 .logo, .perfil {
     display: flex;
