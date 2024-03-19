@@ -314,6 +314,8 @@ header {
 }
 
 .publicaciones {
+    /*background-color: black;*/
+    background-image: url(/view/img/Plants_2.jpg);
     flex: 7 1 0;
     border-right: 1px solid var(--background-mid-light-color);
     border-left: 1px solid var(--background-mid-light-color);
@@ -324,12 +326,15 @@ header {
 
 .publicacion {
     padding: 5%;
-    max-width: 90%;
+    max-width: 95%;
     margin: 2% 3%;
-    background-color: #a3a3a3;
+    background-color: var(--primary-color);
     align-items: center;
-    padding: 12px;
     border-radius: 8px;
+}
+
+.publicacion-crear {
+    margin-top: 30px; /* Espacio entre el formulario y el feed */
 }
 
 .publicacion-unidad {
@@ -459,6 +464,8 @@ input[type="text"],
     border-left: 1px solid var(--background-mid-light-color);
     overflow-y: auto;
 }
+<<<<<<< HEAD
+=======
 
 .publicacion {
     flex: 5 1 0;
@@ -466,6 +473,7 @@ input[type="text"],
 .publicacion-crear {
     margin-top: 30px; /* Espacio entre el formulario y el feed */
 }
+>>>>>>> 72d4b367cda80884430b71dd2b4d66b5a656c7c9
 
 .feed {
     display: flex;
@@ -475,7 +483,7 @@ input[type="text"],
     max-width: 90%;
     width: 90%;
     margin: 2% 3%;
-    background-color: rgb(234, 234, 234);
+    /*background-color: rgb(234, 234, 234);*/
     border-radius: 8px;
     margin-top: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
