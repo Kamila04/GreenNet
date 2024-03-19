@@ -364,12 +364,17 @@ header {
 
 .publicacion {
     padding: 5%;
-    max-width: 90%;
+    width: 90%;
     margin: 2% 3%;
     background-color: #a3a3a3;
     align-items: center;
     padding: 12px;
     border-radius: 8px;
+    
+}
+
+.publicacion-crear {
+    margin-top: 30px; /* Espacio entre el formulario y el feed */
 }
 
 .publicacion-unidad {
@@ -503,10 +508,6 @@ input[type="text"],
 .mi-perfil p {
     text-decoration: underline;
     cursor: pointer;
-}
-
-.publicacion-crear {
-    margin-top: 30px; /* Espacio entre el formulario y el feed */
 }
 
 .feed {

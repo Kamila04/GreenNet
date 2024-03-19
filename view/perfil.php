@@ -56,6 +56,7 @@
                         </div>
                     </div>
                 </form>
+            </div>
 
             <h3>MIS PUBLICACIONES</h3>
             <!--Ciclo para imprimir publicaciones-->

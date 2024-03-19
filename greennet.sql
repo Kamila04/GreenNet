@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-03-2024 a las 03:40:20
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 19-03-2024 a las 14:58:51
+-- Versión del servidor: 11.2.0-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,6 +49,17 @@ CREATE TABLE `publication` (
   `ID_user` int(11) DEFAULT NULL,
   `ID_topic` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `publication`
+--
+
+INSERT INTO `publication` (`ID_publication`, `Title`, `Content`, `Date`, `ID_user`, `ID_topic`) VALUES
+(1, 'HOLA MUNDO', 'Mi primera publicaciÃ³n', '2024-03-17', 3, NULL),
+(3, 'ECOSISTEMA TERRESTRE', 'Ya son mÃ¡s de 200 Ã¡rboles plantados por estudiantes de la Universidad de Colima en la zona centro del municipio de Manzanillo, Colima ', '2024-03-17', 3, NULL),
+(4, 'Â¿EDUCACIÃ“N O ADOCTRINAMIENTO?', 'Â¿El sistema educativo actual es de calidad o en realidad dirige a un adoctrinamiento para ser un empleado mÃ¡s?\r\n\r\nAlgo cuestionable desde hace tiempo es el hecho de que en la educaciÃ³n no hay materias tales como la EducaciÃ³n Financiera', '2024-03-17', 4, NULL),
+(5, 'BRECHA SALARIAL EN SOFTWARE, Â¿AÃšN EXISTE?', 'La brecha salarial entre las mujeres y los hombres que trabajan en la industria del software estÃ¡ acompaÃ±ada de una brecha de acceso a niveles directivos dentro de empresas y organizaciones. SegÃºn el reporte â€œÂ¡Igualdad salarial ya!â€, en MÃ©xico, las mujeres que se dedican a la programaciÃ³n, la administraciÃ³n de sistemas y otras labores dentro de la industria del software ganan en promedio 30% menos que los hombres. El salario promedio que recibe un hombre dentro de la industria de software es de 37,201 pesos mientras que una mujer percibe alrededor de 28,533 pesos al mes.', '2024-03-17', 4, NULL),
+(6, 'JORNADA DE VACUNACIÃ“N CANINA Y FELINA', 'Del domingo 17 al sÃ¡bado 23 de marzo se llevarÃ¡ a cabo en el estado de Colima la Jornada Nacional de VacunaciÃ³n Canina y Felina 2024 y, asÃ­, brindar protecciÃ³n contra la rabia a perros y gatos; habrÃ¡ puntos de vacunaciÃ³n en los diez municipios de la entidad, mediante brigadas y puestos fijos en Centros de Salud. En Manzanillo y MinatitlÃ¡n se desplegarÃ¡n brigadas de vacunaciÃ³n hasta el 28 de marzo, mientras que en ArmerÃ­a, IxtlahuacÃ¡n y TecomÃ¡n se instalarÃ¡n 32 puestos fijos en Centros de Salud de estos municipios. La ubicaciÃ³n de los puestos y de las brigadas de la Jornada Nacional de VacunaciÃ³n Canina y Felina 2024, se pueden consultar en plataformas digitales oficiales en https://bit.ly/4agXLQi', '2024-03-17', 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -142,7 +153,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID_user`, `Username`, `Password`, `Email`, `ID_Role`) VALUES
 (2, 'Saúl Bustamante Bernabe', '$2y$10$/JTlLYqOZ/0/5hhkBLcefuRrZScAIYftHDV7jyhZoQL1sgU9EzrLK', 'zaul.bush@hotmail.com', 2),
-(3, 'Karla Karina Ramírez Marques', '$2y$10$9S6Z.7qQfSAluAgYVHKMduyLyP0fVOqVrIdFmRvgt55ili8qEXi1u', 'kramirez32@ucol.mx', 2);
+(3, 'Karla RM', '$2y$10$9S6Z.7qQfSAluAgYVHKMduyLyP0fVOqVrIdFmRvgt55ili8qEXi1u', 'kramirez32@ucol.mx', 2),
+(4, 'Wolfkarl', '$2y$10$tFbURbIWv7uC83aTJUryFOK1OWX7qP/92UDKCAXX/Qwv//gTqbidy', 'Karlarmlp@gmail.com', 2),
+(5, 'Citlaly ', '$2y$10$hnbarYeIKW.DSgJPen5VtO3zrZOlEdxekcC3jL1.qqa8pKO5IRIZq', 'csamano@ucol.mx', 2);
 
 --
 -- Índices para tablas volcadas
@@ -222,7 +235,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT de la tabla `publication`
 --
 ALTER TABLE `publication`
-  MODIFY `ID_publication` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_publication` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `reactions_comments`
@@ -258,7 +271,7 @@ ALTER TABLE `topics`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
