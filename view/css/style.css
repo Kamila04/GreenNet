@@ -9,6 +9,7 @@
     --secondary-color: #086c9c;
     --third-color: #fc6c24;
     --fourth-color: #f43832;
+    --verde: #47b33f;
 
     --background-light-color: #d7e0df;
     --background-mid-light-color: #c4cbca; 
@@ -228,7 +229,7 @@ header {
             background-color: var(--primary-color);
             color: white;
             border-radius: 10px;
-            width: calc(50% - 20px); /* Adjust width to fit 2 items per row */
+            width: calc(100% - 20px); /* Adjust width to fit 2 items per row */
             cursor: pointer;
             max-height: 65px;
             text-overflow: ellipsis;
@@ -243,13 +244,15 @@ header {
 
 .busqueda {
     flex: 1 1 67%;
-    width: 80%;
+    width: 20em;
+    max-width: 20em;
+    min-width: 20em;
     margin: 10%;
     padding: 3%;
     border-radius: 25px;
-    height: 50%;
-    max-height: 50%;
-    min-height: 50%;
+    height: 21em;
+    max-height: 21em;
+    min-height: 21em;
     background-color: transparent;
 }
 
@@ -335,21 +338,53 @@ header {
 .publicaciones {
     /*background-color: black;*/
     background-image: url(/view/img/Plants_2.jpg);
-    flex: 7 1 0;
+    flex: 7 0 0;
     border-right: 1px solid var(--background-mid-light-color);
     border-left: 1px solid var(--background-mid-light-color);
     overflow-y: auto;
     display: flex;
     justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .publicacion {
-    padding: 5%;
-    max-width: 95%;
-    margin: 2% 3%;
-    background-color: var(--primary-color);
+
+    max-width: 35em;
+    min-width: 35em;
+    border-left: 6px solid blue;
+    background-color: #e1e8ea;
     align-items: center;
+    justify-content: center;
     border-radius: 8px;
+    width: 35em;
+    height: auto;
+}
+.publicacion .vercomments {
+    background-color: transparent;
+    border: none;
+    width: 2.5em;
+    max-width: 2.5em;
+    min-width: 2.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    max-height: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+    font-size: 1rem;
+    margin: 15px;
+    cursor: pointer;
+
+    align-items: center;
+}
+.publicacion .vercomments img {
+    width: 2.5em;
+    max-width: 2.5em;
+    min-width: 2.5em;
+    max-height: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+    align-items: center;
+    display: block;
 }
 
 .publicacion-crear {
@@ -357,14 +392,18 @@ header {
 }
 
 .publicacion-unidad {
-    padding: 2%;
-    background-color: #c9d5d9;
-    border-radius: 8px;
+    background-color: #e1e8ea;
+    padding: 1em 1em;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    border-bottom: 2px solid var(--verde);
 }
+
 
 .contenido {
     padding: 1%;
-    background-color: #f0f0f0;
+    background-color: #e1e8ea;;
     border-radius: 8px;
 }
 
@@ -482,9 +521,8 @@ input[type="text"],
     flex: 5 1 0;
     border-left: 1px solid var(--background-mid-light-color);
     overflow-y: auto;
+    display: flex;
 }
-<<<<<<< HEAD
-=======
 
 .publicacion {
     flex: 5 1 0;
@@ -492,12 +530,11 @@ input[type="text"],
 .publicacion-crear {
     margin-top: 30px; /* Espacio entre el formulario y el feed */
 }
->>>>>>> 72d4b367cda80884430b71dd2b4d66b5a656c7c9
 
 .feed {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     padding: 20px;
     max-width: 90%;
     width: 90%;
@@ -525,6 +562,29 @@ input[type="text"],
 }
 
 .feed .publicacion {
-    border-bottom: 1px solid var(--background-mid-light-color);
-    padding-bottom: 20px;
+    
+    padding-bottom: 10px;
+}
+
+
+
+
+@media (max-width: 1350px) {
+    .app {
+        flex-direction: row;
+    }
+
+    .navegacion {
+        flex: 0 0 40%;
+        order: 1;
+    }
+
+    .publicaciones {
+        flex: 0 0 60%;
+        order: 2;
+    }
+
+    .comentarios {
+        display: none;
+    }
 }

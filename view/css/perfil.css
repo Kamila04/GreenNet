@@ -314,6 +314,8 @@ header {
     max-height: var(--max-height-content);
 }
 
+
+
 .navegacion {
     flex: 4 1 0;
     border-right: 1px solid var(--background-light-color);
@@ -325,6 +327,7 @@ header {
 .navegacion .copyright {
     margin: auto;
     display: flex;
+
     color: #5f5f5f;
 }
 
@@ -377,7 +380,7 @@ header {
             background-color: var(--primary-color);
             color: white;
             border-radius: 10px;
-            width: calc(50% - 20px); /* Adjust width to fit 2 items per row */
+            width: calc(100% - 20px); /* Adjust width to fit 2 items per row */
             cursor: pointer;
             max-height: 65px;
             text-overflow: ellipsis;
@@ -392,13 +395,15 @@ header {
 
 .busqueda {
     flex: 1 1 67%;
-    width: 80%;
+    width: 20em;
+    max-width: 20em;
+    min-width: 20em;
     margin: 10%;
     padding: 3%;
     border-radius: 25px;
-    height: 50%;
-    max-height: 50%;
-    min-height: 50%;
+    height: 21em;
+    max-height: 21em;
+    min-height: 21em;
     background-color: transparent;
 }
 
@@ -482,23 +487,80 @@ header {
 }
 
 .publicaciones {
-    flex: 9 1 0;
-    border-right: 1px solid var(--background-light-color);
+    flex: 7 0 0;
+    border-right: 1px solid var(--background-mid-light-color);
+    border-left: 1px solid var(--background-mid-light-color);
+    overflow-y: auto;
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: start;
-    align-items: flex-start;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
-
+.publicaciones h3 {
+    margin: 1em;
+}
 .publicacion {
-    padding: 5%;
-    width: 90%;
-    margin: 2% 3%;
-    background-color: #a3a3a3;
+    max-width: 35em;
+    min-width: 35em;
+    border-left: 6px solid blue;
+    background-color: #e1e8ea;
     align-items: center;
-    padding: 12px;
+    justify-content: center;
     border-radius: 8px;
+    width: 35em;
+    height: auto;
     
+}
+.publicacion .vercomments {
+    background-color: transparent;
+    border: none;
+    width: 2.5em;
+    max-width: 2.5em;
+    min-width: 2.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    max-height: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+    font-size: 1rem;
+    margin: 15px;
+    cursor: pointer;
+    align-items: center;
+}
+.opciones-miperfil #Edit_Button, #Delete_Button {
+    background-color: transparent;
+    border: none;
+    width: 2.5em;
+    max-width: 2.5em;
+    min-width: 2.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    max-height: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+    font-size: 1rem;
+    margin: 15px;
+    cursor: pointer;
+    align-items: center;
+}
+.publicacion .vercomments img {
+    width: 2.5em;
+    max-width: 2.5em;
+    min-width: 2.5em;
+    max-height: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+    align-items: center;
+    display: block;
+}
+.opciones-miperfil img {
+    width: 2.5em;
+    max-width: 2.5em;
+    min-width: 2.5em;
+    max-height: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+    align-items: center;
+    display: block;
 }
 
 .publicacion-crear {
@@ -506,9 +568,12 @@ header {
 }
 
 .publicacion-unidad {
-    padding: 2%;
-    background-color: #c9d5d9;
-    border-radius: 8px;
+    background-color: #e1e8ea;
+    padding: 1em 1em;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    border-bottom: 2px solid var(--verde);
 }
 
 .contenido {
@@ -522,7 +587,7 @@ header {
 }
 
 .comentarios {
-    flex: 6 1 0;
+    flex: 5 1 0;
     border-left: 1px solid var(--background-mid-light-color);
     overflow-y: auto;
     justify-content: center;
@@ -641,15 +706,15 @@ input[type="text"],
 .feed {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     padding: 20px;
     max-width: 90%;
     width: 90%;
     margin: 2% 3%;
-    background-color: rgb(234, 234, 234);
+    /*background-color: rgb(234, 234, 234);*/
     border-radius: 8px;
     margin-top: 30px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+
 }
 
 .feed h2 {
@@ -669,6 +734,27 @@ input[type="text"],
 }
 
 .feed .publicacion {
-    border-bottom: 1px solid var(--background-mid-light-color);
-    padding-bottom: 20px;
+    
+    padding-bottom: 10px;
+}
+
+
+@media (max-width: 1350px) {
+    .app {
+        flex-direction: row;
+    }
+
+    .navegacion {
+        flex: 0 0 40%;
+        order: 1;
+    }
+
+    .publicaciones {
+        flex: 0 0 60%;
+        order: 2;
+    }
+
+    .comentarios {
+        display: none;
+    }
 }

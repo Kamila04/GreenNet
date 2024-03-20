@@ -37,7 +37,47 @@
         <!--<br><hr>-->
     </div>
     <div class="app">
-        <aside class="navegacion"></aside>
+        <aside class="navegacion">
+                <div class="temas">
+                    <h2>Temas</h2>
+                    <div class="temasopciones">
+                    <ul>
+                        <li>FIN DE LA POBREZA</li>
+                        <li>HAMBRE CERO</li>
+                        <li>SALUD Y BIENESTAR</li>
+                        <li>EDUCACIÓN DE CALIDAD</li>
+                        <li>IGUALDAD DE GÉNERO</li>
+                        <li>AGUA LIMPIA Y SANEAMIENTO</li>
+                        <li>ENERGÍA ASEQUIBLE Y NO CONTAMINANTE</li>
+                        <li>TRABAJO DECENTE Y CRECIMIENTO ECONÓMICO</li>
+                        <li>INDUSTRIA, INNOVACIÓN E INFRAESTRUCTURA</li>
+                        <li>REDUCCIÓN DE LAS DESIGUALDADES</li>
+                        <li>CIUDADES Y COMUNIDADES SOSTENIBLE</li>
+                        <li>PRODUCCIÓN Y CONSUMO RESPONSABLE</li>
+                        <li>ACCIÓN POR EL CLIMA</li>
+                        <li>VIDA SUBMARINA</li>
+                        <li>VIDA DE ECOSISTEMAS TERRESTRES</li>
+                        <li>PAZ, JUSTICIA E INSTITUCIONES SÓLIDAS</li>
+                        <li>ALIANZAS PARA LOGRAR LOS OBJETIVOS</li>
+                        
+                    </ul>
+                    </div>
+                </div>
+                <!--Buscador-->
+                <div class="busqueda">
+                    <h2>¿Buscas algo?</h2>
+                    <input type="search" class="search-bar" name="search" id="search" placeholder="Escribe aquí...">
+                    <div class="populares">
+                    <h2>Popular</h2>
+                    <ul>
+                        <li>¿3ra guerra mundial 2024?</li>
+                        <li>La destrucción de la tierra</li>
+                        <li>MrBeast construye 100 pozos en África</li>
+                    </ul>
+                    </div>
+                </div>
+                <span class="copyright">Copyright 2024© GreenNet</span>
+        </aside>
         <!-- PUBLICACIONES -->
         <main class="publicaciones">
             <!--Panel para crear publicaciones-->
@@ -56,20 +96,23 @@
                         </div>
                     </div>
                 </form>
-            </div>
+         
 
             <h3>MIS PUBLICACIONES</h3>
             <!--Ciclo para imprimir publicaciones-->
+            <section class="feed">
             <?php foreach($publis as $p){ ?>
                 <div class="publicacion">
                     <div class="publicacion-unidad">
                         <h2> <?php echo $p['Title']; ?> </h2>
-                        <h> <?php echo $p['Date']; ?></h><br><br>
+                        
                         <div class="contenido"><p> <?php echo $p['Content'];?></p></div>
-                    </div><br><br>
+                        <h><?php echo $p['Date']; ?></h><br>
+                    </div><br>
                     <div class="opciones-miperfil">
-                        <img src="/view/img/edit.png" width="30px">
-                        <button id="Edit_Button" title="Editar publicación" onclick="openEdit(<?php echo $p['ID_publication']; ?>)">Editar</button>
+                        
+                        <button id="Edit_Button" title="Editar publicación" onclick="openEdit(<?php echo $p['ID_publication']; ?>)">
+                        <img src="/view/img/edit-3-svgrepo-com.png"></button>
                         <div class="EditarDiv" id="EditDiv">
                             <form action="index.php" method="POST" class="EditForm">
                                     <div class="image-container">
@@ -86,21 +129,23 @@
                                     <input type="hidden" name="m" value="">
                             </form>
                         </div>
-                
+
                         <form action="index.php" method="POST">
-                            <img src="/view/img/delete.png" width="30px">
-                            <button name="deleB" value= "<?php echo $p["ID_publication"] ?>" title="Eliminar publicación">Eliminar</button>
+                            
+                            <button id="Delete_Button" name="deleB" value= "<?php echo $p["ID_publication"] ?>" title="Eliminar publicación">
+                            <img src="/view/img/delete-2-svgrepo-com.png"></button>
                             <input type="hidden" name="m" value="deletePubli">
                         </form>
-                        <img src="/view/img/comments.png" width="30px">
-                        <button name="vercomments" value="" title="Ver comentarios de la publicación"> Ir a comentarios</button>
+                        <button name="vercomments" class="vercomments" value="" title="Ver comentarios de la publicación">
+                            <img src="/view/img/bubble-chat-comment-conversation-mail-message-svgrepo-com.png"></img></button>
                     </div>
                 </div>
             <?php }?>
-
+            </section>
         </main>
         <!--Ciclo para imprimir comentarios-->
         <section class="comentarios">
+            <!--
                 <div class="publicacion-unidad">
                     <div class="contenido">
                     <h1>COMENTARIOS</h1><br>
@@ -111,6 +156,7 @@
                     <h3>No todos desean tener una gran empresa y estar entre ejecutivos, el sueño de toda mujer no es casarse y ser ama de casa, no a todas las personas les agrada la idea de vivir en la ciudad de por vida, y así hay varios ejemplos más.</h3><br>
                     </div>
                 </div>
+            -->
         </section>
     </div>
     <div id="Sombreado"></div>
