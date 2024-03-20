@@ -107,11 +107,12 @@
                         <div class="publicacion-unidad">
                             <!-- Insertar nombre del usuario que hizo el post-->
                             <h2><?php echo $publicacion['Title']; ?></h2>
-                            <h><?php echo $publicacion['Date']; ?></h><br><br>
+                            
                             <div class="contenido"><p><?php echo $publicacion['Content']; ?></p></div>
-                        </div><br><br>
-                        <img src="/view/img/comments.png" width="30px">
-                        <button name="vercomments" value="" title="Ver comentarios de la publicación"> Ver comentarios y comentar</button>
+                            <h><?php echo $publicacion['Date']; ?></h><br>
+                        </div>
+                        <button name="vercomments" class="vercomments" value="" title="Ver comentarios de la publicación">
+                            <img src="/view/img/bubble-chat-comment-conversation-mail-message-svgrepo-com.png"></img>0</button>
                     </div><br>
                 <?php endfor; ?>
             </section>
@@ -120,12 +121,14 @@
         <section class="comentarios">
             <div class="publicacion-unidad">
                 <div class="contenido">
+                    <!--Ciclo para imprimir comentarios-
                     <h1>COMENTARIOS</h1><br>
                     <h2>Aquí se abre un panel con los comentarios de la publicación seleccionada</h2><br><br>
                     <h3>EJEMPLO DE COMENTARIO</h3><br>
                     <h3>En algún punto de mi vida comencé a cuestionarme el hecho de que tanto la familia como la sociedad en general, marcan un camino de por dónde deberías ir o cuáles deberían ser tus metas.</h3><br>
                     <h3>En lugar de intentar adoctrinar a las personas desde pequeñas y hacerles sentir mal por no ser el modelo "perfecto" que se desea; se debería inculcar el encontrar la felicidad.</h3><br>
                     <h3>No todos desean tener una gran empresa y estar entre ejecutivos, el sueño de toda mujer no es casarse y ser ama de casa, no a todas las personas les agrada la idea de vivir en la ciudad de por vida, y así hay varios ejemplos más.</h3><br>
+                    -->
                 </div>
             </div>
         </section>
