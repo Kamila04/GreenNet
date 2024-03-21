@@ -15,7 +15,7 @@ function main_header($datos_usuario = null){
 </head>
 <body>
     <header>
-        <div class="logo">
+        <div class="logo" id="logo">
             <img src= <?php echo urlsite ."/view/img/logo_mission_vision.png"; ?> alt="Logo de mi foro" class="img-logo">
             <h1 class="nombre-logo">GreenNet</h1>
         </div>

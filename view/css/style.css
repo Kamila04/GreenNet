@@ -132,6 +132,10 @@ header {
     background-color: red;
 }
 
+.logo{
+    cursor: pointer;
+}
+
 .logo, .perfil {
     display: flex;
     align-items: center;
