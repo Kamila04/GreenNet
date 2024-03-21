@@ -2,6 +2,7 @@
     include("./view/layout/main_header.php");
     include("./view/layout/main_footer.php");
     include("./view/layout/detailsPanel.php");
+    include("./view/layout/publication_panel.php");
     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     if(isset($_SESSION['name'])){
         $account = "<li><a href=". urlsite."/Myaccount". ">Mi cuenta</a></li>";
@@ -32,13 +33,6 @@
     </div>
 
     <div class="app">
-        <?php 
-        if(isset($username)){
-            userPanel($username, $useremail);
-        } else {
-            registerPanel();
-        }
-        ?>
         <!--Mostrar temas-->
         <aside class="navegacion">
             <div class="temas">
@@ -85,20 +79,11 @@
         <main class="publicaciones">
             <!--Panel para crear publicaciones-->
             <div class="publicacion-crear">
-                <form action="index.php?m=enviarPublicacion" method="post">
-                    <div class="mi-perfil">
-                        <div class="image-container">
-                            <span>Crear Post</span>
-                            <img src="<?php echo urlsite; ?>./view/img/perfil_img.jpg" alt="Imagen">
-                            <button type="submit">Enviar</button> 
-                        </div>
-                        <!--Titulo y contenido de la nueva publicacion-->
-                        <div class="input-container">
-                            <input type="text" name="titulo" placeholder="Título"> 
-                            <textarea name="contenido" placeholder="Escribe tu idea..."></textarea> 
-                        </div>
-                    </div>
-                </form>
+            <?php 
+            if(isset($_SESSION['name'])){
+                publicationPanel();
+            }
+            ?>
             <!--Ciclo para imprimir publicaciones-->
             <section class="feed">
                 <?php for ($i = count($publicaciones) - 1; $i >= 0; $i--): ?>

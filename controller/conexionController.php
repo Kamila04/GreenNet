@@ -103,6 +103,10 @@ class conexionController{
     static function enviarPublicacion() {
         if(isset($_POST['titulo']) && isset($_POST['contenido'])){
             if(session_status() != PHP_SESSION_ACTIVE) session_start();
+            if(!isset($_SESSION["key"])){
+                header("Location: ./error404");
+                return;
+            }
             $titulo = $_POST['titulo'];
             $contenido = $_POST['contenido'];
             $fecha = date("Y-m-d");

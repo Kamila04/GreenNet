@@ -1,3 +1,4 @@
+const Logo = document.getElementById('logo');
 const detailsDiv = document.getElementById('detailsDiv');
 const imgLogo = document.getElementById('perfil_Icono');
 const EditDiv = document.getElementById('EditDiv');
@@ -53,7 +54,9 @@ const app = {
 
 }
 
-
+Logo.addEventListener('click', () => {
+    location.href = './';
+});
 imgLogo.addEventListener('click', () => {
     detailsDiv.style.display = detailsDiv.style.display === 'none' ? 'flex' : 'none';
 });
